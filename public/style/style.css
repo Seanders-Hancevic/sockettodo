@@ -1,0 +1,55 @@
+
+.contenttodo {
+    height: 100%;
+
+}
+.submit {
+    display: none;
+}
+
+#content {
+    margin: auto;
+    height: auto;      
+    font-size: 21px;
+  
+} 
+
+.todo {
+    grid-template-rows: auto 30px;
+    opacity: .8;
+    height: auto;
+    z-index: 3;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+.textDisplay {
+    word-break: break-all;
+    position: relative;
+    background-color: transparent;
+
+    text-align: left;
+    height: 15px;
+
+    outline: none;
+    border: none;
+    vertical-align: middle;
+}
+.completed,
+.check-marker{
+    color: black;
+    cursor: pointer;
+}
+
+/* custom icon checkboxes */
+.check-marker input[type="checkbox"],
+.check-marker .checked {
+    display: none;
+}
+
+.check-marker input[type="checkbox"]:checked~.checked {
+    display: inline-block;
+}
+
+.check-marker input[type="checkbox"]:checked~.unchecked {
+    display: none;
+}

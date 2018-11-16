@@ -10,9 +10,8 @@ module.exports = function (io) {
         })
       
         //Socket Routes
-        socket.on('new-todo', function (data) {
+        socket.on('return-todo', function (data) {
             console.log(data);
-            socket.emit()
             const socket1 = todos[data.todoItem];
             socket1.emit('emit-todo', data);
          

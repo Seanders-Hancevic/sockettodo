@@ -1,3 +1,3 @@
 module.exports = {
-    messages: require("./todoLog")
+    todo: require("./todoLog")
   };

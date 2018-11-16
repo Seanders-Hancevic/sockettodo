@@ -1,6 +1,29 @@
 //A todo list with ability to add, update, and delete 
 const socket = io();
 
+
+const sendTodoFunc = () => {
+    // the todo obj below should match whatever you schema expects so you can persist to DB
+    const todo = {
+      content: $('#content').val()
+    }
+    // below sends the todo object to the socket route
+    socket.emit('new-todo', todo);
+  
+    // then do ajax request to send to db
+  }
+  const renderNewTodo = (todo) => {
+	$('#content').append(
+		`<p>todo.text</p>`
+	);
+}
+socket.on('emit-todo', (data) => renderNewTodo(data))
+  // listen for socket to send data to you
+  socket.on('return-todo', (data) => {
+    renderNewTodo(data);
+  });
+
+
 $(function () {
     const state = {
         todo: [],
@@ -32,20 +55,15 @@ $(function () {
             .data('id', todo._id);
 
         label.append(checkbox);
-        // label.append('<i class="fas fa-check-square checked">');
-        // label.append('<i class="far fa-square unchecked">');
+        label.append('<i class= "fas fa-times-circle checked">');
+        label.append('<i class= "far fa-times-circle unchecked">');
 
-        // todoEl.append(
-        //     label,
+        toDoListElement.append(
+            label,
       
-        //     $('<span>').text(todo.text).addClass('list-text'),
+            $('<span>').text(todo.text).addClass('list-text'),
       
-        //     $('<button>')
-        //     // .text('x')
-        //     .addClass('delete')
-        //     .attr('data-index', index)
-        //     .append('<i>').addClass('fas fa-times')
-        //   );    
+          );    
 
         const elem = $('<textarea.readonly>').text(todo.todoItem).addClass('textDisplay');
 
@@ -72,7 +90,7 @@ $(function () {
         $.each(checkboxValues, function (key, value) {
             $("#" + key).prop('checked', value);
         });
-
+        socket.emit('new-todo', dataObj)
     }
 
     $('.check-marker').on('click', () => {
@@ -155,11 +173,9 @@ $(function () {
         $('.todogreeting').addClass('hide');
         $('.newtodo').addClass('hide');
         const newToDo = {
-            todoID: todoID,
             todoItem: $('#toDoInput').val().trim(),
             todoStatus: false,
         };
-        socket.emit('new-todo', { todoID: todoID, todoItem: todoItem, todoStatus: todoStatus});
         for (let key in newToDo) {
             if (newToDo[key] === '') {
                 alert('Please Enter Something To Do!');

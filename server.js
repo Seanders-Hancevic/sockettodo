@@ -13,11 +13,11 @@ app.use(express.static('public'));
 
 mongoose.connect('mongodb://localhost/toDoList', { useNewUrlParser: true});
 
-require('./sockets/message-sockets')(io)
+require('./sockets/todo-sockets')(io)
 
 
 require('./routes/html-routes')(app);
-require('./routes/api-routes')(app);
+require('./routes/api-routes-todo')(app);
 
 server.listen(PORT, () => {
     console.log('Server is Listening')
