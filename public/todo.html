@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+        <div id='date-container'></div>
+
+        <div class="bottom-right todo" id="todoright">
+                <div class="todoheader">
+                    <div class="todoheaderleft">
+                        <h1>Today</h1>
+                    </div>
+                    <div class="todoheaderright"><button class="options"><i class="fas fa-ellipsis-h"></i></button></div>
+                </div>
+                <div class="todogreeting">
+                    <h2>Add a todo to get started</h2>
+                </div>
+                <div class="todonew">
+                    <span id="newtodobutton" class="newtodo">New Todo</span>
+                </div>
+                <div class="contenttodo" id="content">
+        
+                </div>
+                <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
+                <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+            </div>
+            <div id="todo" class="todoicon"><span class="to do icon" id="todospan">Todo</span></div>
+        
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
+        <script src='js/todo.js'></script>
+</body>
+</html>
