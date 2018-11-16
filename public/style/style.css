@@ -1,4 +1,6 @@
-
+body {
+    background-color: antiquewhite;
+}
 .contenttodo {
     height: 100%;
 
@@ -13,7 +15,27 @@
     font-size: 21px;
   
 } 
+.date {
+    display: grid;
+    grid-template-columns: 70px auto;
+    margin-left:auto;
+    margin-right:auto;
+    width: 20%;
+}
 
+#day-container {
+    font-size: 40px;
+    line-height: 30px;
+    width: 35px;
+   align-content: center;
+   justify-content: center;
+   font-family: 'Alfa Slab One', cursive;
+/* font-family: 'Anton', sans-serif; */
+}
+#date-container {
+    text-align: left;
+ 
+}
 .todo {
     grid-template-rows: auto 30px;
     opacity: .8;
@@ -21,15 +43,64 @@
     z-index: 3;
     overflow-wrap: break-word;
     overflow: hidden;
+    
+}
+.bottom-right {
+        width: 500px;
+        height: 600px;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: white;
+     
+}
+
+.checked {
+color: #4db8ff;
+}
+
+.fa-times-circle{
+position: relative;
+left: 410px;
+top:5px;
+margin: auto;
+}
+.form {
+    padding-left: 10px;
+    font-size: 20px;
+    height: 40px;
+    width: 490px;
+    margin: auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.textDisplay {
+    font-size: 20px;
+    word-break: break-all;
+    position: relative;
+    background-color: transparent;
+    width: 300px;
+    text-align: left;
+    height: 15px;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+}
+
+.form-control,
+.form-control:focus {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 .textDisplay {
     word-break: break-all;
     position: relative;
     background-color: transparent;
-
     text-align: left;
     height: 15px;
-
     outline: none;
     border: none;
     vertical-align: middle;

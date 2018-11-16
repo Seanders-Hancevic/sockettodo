@@ -2,6 +2,34 @@
 const socket = io();
 
 
+var m_names = ["Jan", "Feb", "March", 
+"April", "May", "June", "July", "Aug", "Sept", 
+"Oct", "Nov", "Dec"];
+
+var d_names = ["Sun","Mon", "Tues", "We", 
+"Thurs", "Fri", "Sat"];
+
+var myDate = new Date();
+myDate.setDate(myDate.getDate()+7);
+var curr_date = myDate.getDate();
+var curr_month = myDate.getMonth();
+var curr_day  = myDate.getDay();
+var curr_year = myDate.getFullYear();
+
+const renderDay = () => {
+	$('#day-container').append(
+		d_names[curr_day]
+	);
+}
+renderDay();
+const renderDate = () => {
+	$('#date-container').append(
+		m_names[curr_month] + " " +curr_date + "," + curr_year
+	);
+}
+renderDate();
+
+
 const sendTodoFunc = () => {
     // the todo obj below should match whatever you schema expects so you can persist to DB
     const todo = {

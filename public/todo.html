@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 </head>
+
 <body>
+    <div class="date">
+        <div id='day-container'></div>
         <div id='date-container'></div>
-
-        <div class="bottom-right todo" id="todoright">
-              
-                
-                <div class="todonew">
-                    <span id="newtodobutton" class="newtodo">New Todo</span>
-                </div>
-                <div class="contenttodo" id="content">
-        
-                </div>
-                <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
-                <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
-            </div>
-           
-            </div>
+    </div>
 
 
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
-        <script src='js/todo.js'></script>
+    <div class="bottom-right form-control" id="todoright">
+
+            <input type="text" class="form" id="toDoInput" placeholder="New Todo">
+            <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+        <div class="contenttodo" id="content">
+
+        </div>
+ 
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js'></script>
+    <script src='js/todo.js'></script>
 </body>
+
 </html>
