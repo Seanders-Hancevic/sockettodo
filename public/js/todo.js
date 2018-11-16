@@ -105,25 +105,25 @@ $(function () {
      * 
      */
 
-    const runToDoQuery = function (_id) {
-        const getData = {
-            todoID: _id,
-            todoItem: state.todo,
-            todoStatus: false
-        }
-        $.ajax({
-            url: '/api/todoLog',
-            method: 'GET',
-            data: getData
-        })  .then(function (todo) {
-            state.todo = todo
-            renderToDos('#content', todo);
-        });
-        // $.ajax({ url: "/api/todoLog", method: "GET" })
-        //     .then(function (todo) {
-        //         state.todo = todo
-        //         renderToDos('#content', todo);
-        //     });
+    const runToDoQuery = function (S) {
+        // const getData = {
+        //     todoID: _id,
+        //     todoItem: state.todo,
+        //     todoStatus: false
+        // }
+        // $.ajax({
+        //     url: '/api/todoLog',
+        //     method: 'GET',
+        //     data: getData
+        // })  .then(function (todo) {
+        //     state.todo = todo
+        //     renderToDos('#content', todo);
+        // });
+        $.ajax({ url: "/api/todoLog", method: "GET" })
+            .then(function (todo) {
+                state.todo = todo
+                renderToDos('#content', todo);
+            });
     }
     socket.on('emit-todo', function (data) {
         console.log(data);
