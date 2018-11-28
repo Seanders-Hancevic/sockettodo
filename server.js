@@ -11,7 +11,13 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-mongoose.connect('mongodb://localhost/toDoList', { useNewUrlParser: true});
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://sh9669:password1234@ds227821.mlab.com:27821/heroku_zf4qqsff",
+    {
+      useMongoClient: true
+    }
+  );
+  
 
 require('./sockets/todo-sockets')(io)
 
