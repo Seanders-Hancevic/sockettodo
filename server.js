@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.Promise = global.Promise;
 
@@ -21,8 +21,6 @@ mongoose.connect(
   
 
 require('./sockets/todo-sockets')(io)
-
-
 require('./routes/html-routes')(app);
 require('./routes/api-routes-todo')(app);
 
